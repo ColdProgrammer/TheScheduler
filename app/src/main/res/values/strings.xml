@@ -5,4 +5,146 @@
     <string name="forgot_quest">Forgot Password Question</string>
     <string name="ans">Answer</string>
     <string name="sign_up">Sign-Up</string>
+    <string name="title_activity_future_classes">Future Classes</string>
+    <string name="ctocomplete">Courses To Be Completed</string>
+    <string name="large_text"> <!-- IE sample list of classes-->
+        CS 100 - Introduction to the Profession\n
+        CS 104 - Introduction to Computer Programming for Engineers\n
+        CS 105 - Introduction to Computer Programming\n
+        CS 110 - Computing Principles\n
+        CS 115 - Object-Oriented Programming I\n
+        CS 116 - Object-Oriented Programming II\n
+        CS 201 - Accelerated Introduction to Computer Science\n
+        CS 330 - Discrete Structures\n
+        CS 331 - Data Structures and Algorithms\n
+        CS 350 - Computer Organization and Assembly Language Programming\n
+        CS 351 - Systems Programming\n
+        CS 397 - Special Projects\n
+        CS 401 - Introduction to Advanced Studies I\n
+        CS 402 - Introduction to Advanced Studies II\n
+        CS 403 - Foundations to Advanced Studies\n
+        CS 406 - Introduction to Discrete Structures and Algorithms\n
+        CS 411 - Computer Graphics\n
+        CS 422 - Data Mining\n
+        CS 425 - Database Organization\n
+        CS 429 - Information Retrieval\n
+        CS 430 - Introduction to Algorithms\n
+        CS 440 - Programming Languages and Translators\n
+        CS 442 - Mobile Applications Development\n
+        CS 443 - Compiler Construction\n
+        CS 445 - Object Oriented Design and Programming\n
+        CS 447 - Distributed Objects\n
+        CS 450 - Operating Systems\n
+        CS 451 - Introduction to Parallel and Distributed Computing\n
+        CS 455 - Data Communications\n
+        CS 456 - Introduction to Wireless Networks and Performance\n
+        CS 458 - Introduction to Information Security\n
+        CS 470 - Computer Architecture\n
+        CS 480 - Artificial Intelligence Planning and Control\n
+        CS 481 - Artificial Intelligence Language Understanding\n
+        CS 482 - Information and Knowledge Management Systems\n
+        CS 485 - Computers and Society\n
+        CS 487 - Software Engineering I\n
+        CS 491 - Undergraduate Research\n
+        CS 495 - Topics in Computer Science\n
+        CS 497 - Special Projects\n
+        CS 511 - Topics in Computer Graphics\n
+        CS 512 - Computer Vision\n
+        CS 513 - Geospatial Vision and Visualization\n
+        CS 520 - Data Integration, Warehousing, and Provenance\n
+        CS 521 - Object-Oriented Analysis and Design\n
+        CS 522 - Advanced Data Mining\n
+        CS 525 - Advanced Database Organization\n
+        CS 529 - Information Retrieval\n
+        CS 530 - Theory of Computation\n
+        CS 531 - Topics in Automata Theory\n
+        CS 532 - Formal Languages\n
+        CS 533 - Computational Geometry\n
+        CS 535 - Design and Analysis of Algorithms\n
+        CS 536 - Science of Programming\n
+        CS 537 - Software Metrics\n
+        CS 538 - Combinatorial Optimization\n
+        CS 539 - Game Theory: Algorithms and Applications\n
+        CS 540 - Syntactic Analysis of Programming Languages\n
+        CS 541 - Topics in Compiler Construction\n
+        CS 542 - Computer Networks I: Fundamentals\n
+        CS 544 - Computer Networks II: Network Services\n
+        CS 545 - Distributed Computing Landscape\n
+        CS 546 - Parallel and Distributed Processing\n
+        CS 547 - Wireless Networking\n
+        CS 548 - High-Speed Networks\n
+        CS 549 - Cryptography and Network Security\n
+        CS 550 - Advanced Operating Systems\n
+        CS 551 - Operating System Design and Implementation\n
+        CS 552 - Distributed Real-Time Systems\n
+        CS 553 - Cloud Computing\n
+        CS 554 - Data-Intensive Computing\n
+        CS 555 - Analytic Models and Simulation of Computer Systems\n
+        CS 556 - Cyber-Physical Systems: Languages and Systems\n
+        CS 557 - Cyber-Physical Systems: Networking and Algorithms\n
+        CS 558 - Advanced Computer Security\n
+        CS 559 - Biometrics\n
+        CS 560 - Computer Science in the Classroom\n
+        CS 561 - The Computer and Curriculum Content\n
+        CS 565 - Computer Assisted Instruction\n
+        CS 566 - Practicum in the Application of Computers to Education\n
+        CS 570 - Advanced Computer Architecture\n
+        CS 572 - Advanced Topics in Computer Architecture\n
+        CS 579 - Online Social Network Analysis\n
+        CS 580 - Topics in Machine Learning\n
+        CS 581 - Topics in Artificial Intelligence\n
+        CS 582 - Computational Robotics\n
+        CS 583 - Probabilistic Graphical Models\n
+        CS 584 - Machine Learning\n
+        CS 585 - Natural Language Processing\n
+        CS 586 - Software Systems Architectures\n
+        CS 587 - Software Project Management\n
+        CS 588 - Advanced Software Engineering Development\n
+        CS 589 - Software Testing and Analysis\n
+        CS 590 - Seminar in Computer Science\n
+        CS 591 - Research and Thesis of Masters Degree\n
+        CS 594 - Research Problems\n
+        CS 595 - Topics in Computer Science\n
+        CS 597 - Reading and Special Problems\n
+        CS 612 - Topics in Computer Vision\n
+        CS 630 - Advanced Topics in Algorithms\n
+        CS 642 - Advanced Topics in Networking\n
+        CS 681 - Topics in Computational Linguistics\n
+        CS 689 - Advanced Topics in Software Engineering\n
+        CS 691 - Research and Thesis Ph.D.\n
+        CS 695 - Doctoral Seminar\n
+        CS 750 - Computer Aided Software Engineering\n
+        CS 763 - Automated Software Testing\n
+        CSP 527 - Client-Server Applications Development\n
+        CSP 541 - Internet Technologies\n
+        CSP 542 - Internet Design and Analysis\n
+        CSP 543 - Multimedia Networking\n
+        CSP 544 - System and Network Security\n
+        CSP 545 - Wireless Networking Technologies and Applications\n
+        CSP 550 - Internet Programming\n
+        CSP 551 - Advanced UNIX Programming\n
+        CSP 570 - Data Science Seminar\n
+        CSP 571 - Data Preparation and Analysis\n
+        CSP 572 - Data Science Practicum\n
+        CSP 581 - Applied Artificial Intelligence Programming\n
+        CSP 584 - Enterprise Web Applications\n
+        CSP 585 - Object-Oriented Design Patterns\n
+        CSP 586 - Software Modeling Development with UML\n
+        CSP 587 - Software Quality Management\n
+        CSP 595 - Topics in Computer Science Professional Master\n
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
 </resources>
