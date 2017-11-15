@@ -16,11 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-		<activity
+        <activity
             android:name=".FutureClassesActivity"
-            android:label="@string/title_activity_future_classes"></activity>
+            android:label="@string/title_activity_future_classes" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".CalenderViewActivity"></activity>
+        <activity android:name=".CalenderViewActivity" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>

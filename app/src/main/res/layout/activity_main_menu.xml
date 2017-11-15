@@ -7,10 +7,48 @@
     android:orientation="vertical"
     tools:context="com.cs442.srajan.thescheduler.MainMenuActivity">
 
-    <Button
-        android:id="@+id/btn_signup"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click me" />
+        android:orientation="vertical"
+        android:padding="10dp">
 
+        <Button
+            android:id="@+id/btn_view_future_courses"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="@string/view_future_courses" />
+
+        <Button
+            android:id="@+id/btn_view_current_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/view_current_schedule" />
+
+        <Button
+            android:id="@+id/btn_input_classes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/input_classes" />
+
+        <Button
+            android:id="@+id/btn_add_to_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/add_to_calendar" />
+
+        <Button
+            android:id="@+id/btn_view_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/view_calendar" />
+
+    </LinearLayout>
 </LinearLayout>
