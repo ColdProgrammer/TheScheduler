@@ -13,6 +13,8 @@ public class FutureClassesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_future_classes);
+        //To get the back button on Title Bar
+        getSupportActionBar().setHomeButtonEnabled(true);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
