@@ -16,6 +16,7 @@ public class StaticVariables {
     // User Table Columns names
     public static final String COLUMN_USER_ID = "user_id";
     public static final String COLUMN_USER_NAME = "user_name";
-    public static final String COLUMN_USER_EMAIL = "user_email";
+    public static final String COLUMN_USER_FORGOT_QUESTION = "user_frgt_quest";
+    public static final String COLUMN_USER_FORGOT_ANS = "user_frgt_ans";
     public static final String COLUMN_USER_PASSWORD = "user_password";
 }

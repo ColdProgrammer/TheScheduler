@@ -11,7 +11,7 @@
     <string name="input_classes">Input classes</string>
     <string name="add_to_calendar">Add to calendar</string>
     <string name="view_calendar">View calendar</string>
-
+    <string name="error_valid_email_password">Wrong Email or Password</string>
     <string name="title_activity_future_classes">Future Classes</string>
     <string name="ctocomplete">Courses To Be Completed</string>
     <string name="large_text"> <!-- IE sample list of classes-->

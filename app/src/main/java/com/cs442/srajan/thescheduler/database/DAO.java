@@ -28,13 +28,14 @@ public class DAO extends SQLiteOpenHelper {
     // User Table Columns names
     private static final String COLUMN_USER_ID = StaticVariables.COLUMN_USER_ID;
     private static final String COLUMN_USER_NAME = StaticVariables.COLUMN_USER_NAME;
-    private static final String COLUMN_USER_EMAIL = StaticVariables.COLUMN_USER_EMAIL;
+    private static final String COLUMN_USER_FORGOT_QUESTION = StaticVariables.COLUMN_USER_FORGOT_QUESTION;
+    private static final String COLUMN_USER_FORGOT_ANS = StaticVariables.COLUMN_USER_FORGOT_ANS;
     private static final String COLUMN_USER_PASSWORD = StaticVariables.COLUMN_USER_PASSWORD;
 
     // create table sql query
     private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
             + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_NAME + " TEXT,"
-            + COLUMN_USER_EMAIL + " TEXT," + COLUMN_USER_PASSWORD + " TEXT" + ")";
+            + COLUMN_USER_FORGOT_QUESTION + " TEXT," + COLUMN_USER_FORGOT_ANS + " TEXT," + COLUMN_USER_PASSWORD + " TEXT" + ")";
 
     // drop table sql query
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
@@ -68,7 +69,8 @@ public class DAO extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(COLUMN_USER_NAME, user.getName());
-        values.put(COLUMN_USER_EMAIL, user.getEmail());
+        values.put(COLUMN_USER_FORGOT_QUESTION, user.getFrgtquestion());
+        values.put(COLUMN_USER_FORGOT_ANS, user.getFrgtanswer());
         values.put(COLUMN_USER_PASSWORD, user.getPassword());
 
         // Inserting Row
@@ -85,7 +87,8 @@ public class DAO extends SQLiteOpenHelper {
         // array of columns to fetch
         String[] columns = {
                 COLUMN_USER_ID,
-                COLUMN_USER_EMAIL,
+                COLUMN_USER_FORGOT_QUESTION,
+                COLUMN_USER_FORGOT_ANS,
                 COLUMN_USER_NAME,
                 COLUMN_USER_PASSWORD
         };
@@ -117,7 +120,8 @@ public class DAO extends SQLiteOpenHelper {
                 User user = new User();
                 user.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID))));
                 user.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
-                user.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
+                user.setFrgtquestion(cursor.getString(cursor.getColumnIndex(COLUMN_USER_FORGOT_QUESTION)));
+                user.setFrgtanswer(cursor.getString(cursor.getColumnIndex(COLUMN_USER_FORGOT_ANS)));
                 user.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
                 // Adding user record to list
                 userList.add(user);
@@ -140,7 +144,8 @@ public class DAO extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(COLUMN_USER_NAME, user.getName());
-        values.put(COLUMN_USER_EMAIL, user.getEmail());
+        values.put(COLUMN_USER_FORGOT_QUESTION, user.getFrgtquestion());
+        values.put(COLUMN_USER_FORGOT_ANS, user.getFrgtanswer());
         values.put(COLUMN_USER_PASSWORD, user.getPassword());
 
         // updating row
@@ -162,46 +167,7 @@ public class DAO extends SQLiteOpenHelper {
         db.close();
     }
 
-    /**
-     * This method to check user exist or not
-     *
-     * @param email
-     * @return true/false
-     */
-    public boolean checkUser(String email) {
 
-        // array of columns to fetch
-        String[] columns = {
-                COLUMN_USER_ID
-        };
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        // selection criteria
-        String selection = COLUMN_USER_EMAIL + " = ?";
-
-        // selection argument
-        String[] selectionArgs = {email};
-
-        // query user table with condition
-        /**
-         * Here query function is used to fetch records from user table this function works like we use sql query.
-         * SQL query equivalent to this query function is
-         * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com';
-         */
-        Cursor cursor = db.query(TABLE_USER, //Table to query
-                columns,                    //columns to return
-                selection,                  //columns for the WHERE clause
-                selectionArgs,              //The values for the WHERE clause
-                null,                       //group the rows
-                null,                      //filter by row groups
-                null);                      //The sort order
-        int cursorCount = cursor.getCount();
-        cursor.close();
-        db.close();
-
-        return cursorCount > 0;
-
-    }
 
     /**
      * This method to check user exist or not
@@ -210,7 +176,7 @@ public class DAO extends SQLiteOpenHelper {
      * @param password
      * @return true/false
      */
-    public boolean checkUser(String email, String password) {
+    public boolean checkUser(String userId, String password) {
 
         // array of columns to fetch
         String[] columns = {
@@ -218,10 +184,10 @@ public class DAO extends SQLiteOpenHelper {
         };
         SQLiteDatabase db = this.getReadableDatabase();
         // selection criteria
-        String selection = COLUMN_USER_EMAIL + " = ?" + " AND " + COLUMN_USER_PASSWORD + " = ?";
+        String selection = COLUMN_USER_NAME + " = ?" + " AND " + COLUMN_USER_PASSWORD + " = ?";
 
         // selection arguments
-        String[] selectionArgs = {email, password};
+        String[] selectionArgs = {userId, password};
 
         // query user table with conditions
         /**
