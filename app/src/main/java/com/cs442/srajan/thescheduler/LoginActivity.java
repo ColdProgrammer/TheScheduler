@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         //On click of the sign-in page
         if(databaseHelper.checkUser(editTextUserName.getText().toString(), editTextPassword.getText().toString())){
             //Correct Password
-
+            startActivity(new Intent(view.getContext(), MainActivity.class));
         }else{
             Snackbar.make(layoutLogin, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
             editTextPassword.setText("");

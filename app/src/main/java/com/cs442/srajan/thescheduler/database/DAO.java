@@ -172,7 +172,7 @@ public class DAO extends SQLiteOpenHelper {
     /**
      * This method to check user exist or not
      *
-     * @param email
+     * @param userId
      * @param password
      * @return true/false
      */
