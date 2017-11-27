@@ -1,6 +1,8 @@
 package com.cs442.srajan.thescheduler;
 
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
+import android.view.View;
 import android.widget.EditText;
 
 /**
@@ -34,5 +36,21 @@ public class StaticVariables {
     public static boolean checkEditTextIsEmpty(EditText editText){
         return editText.getText().toString() == null;
 
+    }
+
+    /**
+     * Function to return a SnackBar with custom Theme
+     *
+     * @param view
+     * @param text
+     * @param duration
+     * @param color
+     * @return snackbar
+     *
+     * */
+    public static Snackbar themedSnackBar(View view, CharSequence text, int duration, int color){
+        Snackbar snackbar = Snackbar.make(view,text,duration);
+        snackbar.getView().setBackgroundColor(color);
+        return snackbar;
     }
 }

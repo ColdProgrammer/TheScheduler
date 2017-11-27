@@ -1,6 +1,7 @@
 package com.cs442.srajan.thescheduler;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,8 +44,12 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(view.getContext(), MainActivity.class));
             } else {
                 resetVal();
-                Snackbar.make(layoutLogin, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
+                //Snackbar.make(layoutLogin, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
+                StaticVariables.themedSnackBar(layoutLogin, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG, Color.parseColor("#FFFFFF")).show();
             }
+        } else {
+            //Snackbar.make(layoutLogin, getString(R.string.error_no_username_password), Snackbar.LENGTH_LONG).show();
+            StaticVariables.themedSnackBar(layoutLogin, getString(R.string.error_no_username_password), Snackbar.LENGTH_LONG, Color.parseColor("#FFFFFF")).show();
         }
     }
 
