@@ -1,5 +1,8 @@
 package com.cs442.srajan.thescheduler;
 
+import android.support.design.widget.TextInputEditText;
+import android.widget.EditText;
+
 /**
  * Created by project on 24/11/17.
  *
@@ -19,4 +22,17 @@ public class StaticVariables {
     public static final String COLUMN_USER_FORGOT_QUESTION = "user_frgt_quest";
     public static final String COLUMN_USER_FORGOT_ANS = "user_frgt_ans";
     public static final String COLUMN_USER_PASSWORD = "user_password";
+
+    /**
+     * Function to check if the edit text is empty
+     *
+     * @param editText
+     * @return false if edit text has a value
+     * @return true if edit text is null
+     *
+     **/
+    public static boolean checkEditTextIsEmpty(EditText editText){
+        return editText.getText().toString() == null;
+
+    }
 }
