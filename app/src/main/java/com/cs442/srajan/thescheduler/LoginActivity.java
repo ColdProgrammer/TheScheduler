@@ -29,20 +29,31 @@ public class LoginActivity extends AppCompatActivity {
         databaseHelper = new DAO(LoginActivity.this);
     }
 
-    public void signUpFunct(View view){
+    public void signUpFunct(View view) {
         //On click of the button open sign-up page
+        resetVal();
         startActivity(new Intent(view.getContext(), SignUpActivity.class));
     }
 
-    public void signInFunct(View view){
+    public void signInFunct(View view) {
         //On click of the sign-in page
-        if(databaseHelper.checkUser(editTextUserName.getText().toString(), editTextPassword.getText().toString())){
-            //Correct Password
-            startActivity(new Intent(view.getContext(), MainActivity.class));
-        }else{
-            Snackbar.make(layoutLogin, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
-            editTextPassword.setText("");
-            editTextUserName.setText("");
+        if(StaticVariables.checkEditTextIsEmpty(editTextPassword) && StaticVariables.checkEditTextIsEmpty(editTextPassword)) {
+            if (databaseHelper.checkUser(editTextUserName.getText().toString(), editTextPassword.getText().toString())) {
+                //Correct Password
+                startActivity(new Intent(view.getContext(), MainActivity.class));
+            } else {
+                resetVal();
+                Snackbar.make(layoutLogin, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
+            }
         }
+    }
+
+    /**
+     * Function to reset all the values in the activity
+     *
+     * */
+    private void resetVal() {
+        editTextUserName.setText("");
+        editTextPassword.setText("");
     }
 }
