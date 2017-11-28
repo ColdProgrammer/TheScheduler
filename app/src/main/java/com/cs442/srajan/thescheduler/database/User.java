@@ -22,13 +22,7 @@ public class User {
     //number of credits currently taking
     private int creditsTaking;
 
-<<<<<<< Updated upstream
-    public User(){
-        
-    }
-=======
     public User(){} //Default Constructor
->>>>>>> Stashed changes
 
     public User(int id, String name, String frgtquestion, String frgtanswer, String password, int creditsTaking) {
         this.id = id;
