@@ -40,10 +40,10 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void signingUpNewUser(View view) {
         //To sign up new users
-        if(StaticVariables.checkEditTextIsEmpty(inputEditTextSignUpName) &&
+        if(!(StaticVariables.checkEditTextIsEmpty(inputEditTextSignUpName) &&
                 StaticVariables.checkEditTextIsEmpty(inputEditTextSignUpPassword) &&
                 StaticVariables.checkEditTextIsEmpty(inputEditTextSignUpFrgtQuest) &&
-                StaticVariables.checkEditTextIsEmpty(inputEditTextSignUpFrgtAns)) {
+                StaticVariables.checkEditTextIsEmpty(inputEditTextSignUpFrgtAns))) {
             User user = new User();
             user.setName(inputEditTextSignUpName.getText().toString());
             user.setPassword(inputEditTextSignUpPassword.getText().toString());

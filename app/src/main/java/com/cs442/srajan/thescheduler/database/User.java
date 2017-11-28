@@ -22,6 +22,10 @@ public class User {
     //number of credits currently taking
     private int creditsTaking;
 
+    public User(){
+        
+    }
+
     public User(int id, String name, String frgtquestion, String frgtanswer, String password, int creditsTaking) {
         this.id = id;
         this.name = name;
@@ -75,6 +79,11 @@ public class User {
     public void addCourse(Course course){
         this.crnList.add(course.getCrn());
         this.creditsTaking += course.getCreditValue();
+    }
+
+    public void removeCourse(Course course){
+        this.crnList.remove(course.getCrn());
+        this.creditsTaking -= course.getCreditValue();
     }
 
 }

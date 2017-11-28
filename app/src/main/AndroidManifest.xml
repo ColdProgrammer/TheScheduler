@@ -9,38 +9,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity
             android:name=".FutureClassesActivity"
-            android:label="@string/title_activity_future_classes" >
-            <!-- Parent Activity meta-data to support 4.0 and lower-->
+            android:label="@string/title_activity_future_classes">
+
+            <!-- Parent Activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cs442.srajan.thescheduler.FutureClassesActivity" />
         </activity>
-        <activity android:name=".SignUpActivity" >
-            <!-- Parent Activity meta-data to support 4.0 and lower-->
+        <activity android:name=".SignUpActivity">
+
+            <!-- Parent Activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cs442.srajan.thescheduler.SignUpActivity" />
         </activity>
-        <activity android:name=".CalenderViewActivity" >
-            <!-- Parent Activity meta-data to support 4.0 and lower-->
+        <activity android:name=".CalenderViewActivity">
+
+            <!-- Parent Activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cs442.srajan.thescheduler.CalenderViewActivity" />
         </activity>
         <activity android:name=".LoginActivity">
-            <!-- Parent Activity meta-data to support 4.0 and lower-->
+
+            <!-- Parent Activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cs442.srajan.thescheduler.LoginActivity" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".InputClassActivity"></activity>
     </application>
 
 </manifest>
