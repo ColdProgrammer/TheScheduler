@@ -16,6 +16,18 @@
     <string name="error_no_details">Enter all the details</string>
     <string name="title_activity_future_classes">Future Classes</string>
     <string name="ctocomplete">Courses To Be Completed</string>
+    <string-array name="locations_list">
+        <item>AM</item>
+        <item>CR</item>
+        <item>RE</item>
+        <item>LS</item>
+        <item>PH</item>
+        <item>SH</item>
+        <item>SB</item>
+        <item>WH</item>
+    </string-array>
+
+
     <string name="large_text"> <!-- IE sample list of classes-->
         CS 100 - Introduction to the Profession\n
         CS 104 - Introduction to Computer Programming for Engineers\n
