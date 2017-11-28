@@ -26,6 +26,7 @@ public class SavingCoursesAsyncTask extends AsyncTask {
                 String[] courseArray = coursesString[i];//All the course details in an array
                 Log.d("The course info" , courseArray[0]);
                 Course course  =  new Course();
+                course.setCourseNumber(courseArray[0].trim());
             }
         }
         return null;
