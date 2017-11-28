@@ -1,5 +1,7 @@
 package com.cs442.srajan.thescheduler.database;
 
+import java.util.ArrayList;
+
 /**
  * Created by project on 24/11/17.
  *
@@ -13,6 +15,22 @@ public class User {
     private String frgtquestion;
     private String frgtanswer;
     private String password;
+
+    //list of class crns already taken
+    private ArrayList<Integer> crnList;
+
+    //number of credits currently taking
+    private int creditsTaking;
+
+    public User(int id, String name, String frgtquestion, String frgtanswer, String password, int creditsTaking) {
+        this.id = id;
+        this.name = name;
+        this.frgtquestion = frgtquestion;
+        this.frgtanswer = frgtanswer;
+        this.password = password;
+
+        this.creditsTaking = creditsTaking;
+    }
 
     public int getId() {
         return id;
@@ -53,4 +71,10 @@ public class User {
     public void setFrgtanswer(String frgtanswer) {
         this.frgtanswer = frgtanswer;
     }
+
+    public void addCourse(Course course){
+        this.crnList.add(course.getCrn());
+        this.creditsTaking += course.getCreditValue();
+    }
+
 }

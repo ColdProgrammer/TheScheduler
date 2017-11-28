@@ -12,6 +12,8 @@
     <string name="add_to_calendar">Add to calendar</string>
     <string name="view_calendar">View calendar</string>
     <string name="error_valid_email_password">Wrong Email or Password</string>
+    <string name="error_no_username_password">Enter both UserName and Password</string>
+    <string name="error_no_details">Enter all the details</string>
     <string name="title_activity_future_classes">Future Classes</string>
     <string name="ctocomplete">Courses To Be Completed</string>
     <string name="large_text"> <!-- IE sample list of classes-->
