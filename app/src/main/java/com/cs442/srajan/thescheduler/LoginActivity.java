@@ -24,10 +24,11 @@ public class LoginActivity extends AppCompatActivity {
         //To get the back button on Title Bar
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        layoutLogin = (LinearLayout) findViewById(R.id.loginLinearLayout);
-        editTextUserName = (EditText) findViewById(R.id.tietLoginSignInUserName);
-        editTextPassword = (EditText) findViewById(R.id.tietSignInPassword);
+        layoutLogin = findViewById(R.id.loginLinearLayout);
+        editTextUserName = findViewById(R.id.tietLoginSignInUserName);
+        editTextPassword = findViewById(R.id.tietSignInPassword);
         databaseHelper = new DAO(LoginActivity.this);
+
     }
 
     public void signUpFunct(View view) {

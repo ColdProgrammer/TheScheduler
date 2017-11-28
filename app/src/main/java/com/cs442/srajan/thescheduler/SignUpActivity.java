@@ -30,11 +30,11 @@ public class SignUpActivity extends AppCompatActivity {
         //To get the back button on Title Bar
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        layout = (LinearLayout) findViewById(R.id.signUpLinearLayout);
-        inputEditTextSignUpName = (TextInputEditText) findViewById(R.id.tietSignUpUserName);
-        inputEditTextSignUpPassword = (TextInputEditText) findViewById(R.id.tietSignUpPassword);
-        inputEditTextSignUpFrgtQuest = (TextInputEditText) findViewById(R.id.tietSignUpQuestion);
-        inputEditTextSignUpFrgtAns = (TextInputEditText) findViewById(R.id.tietSignUpAns);
+        layout = findViewById(R.id.signUpLinearLayout);
+        inputEditTextSignUpName = findViewById(R.id.tietSignUpUserName);
+        inputEditTextSignUpPassword = findViewById(R.id.tietSignUpPassword);
+        inputEditTextSignUpFrgtQuest = findViewById(R.id.tietSignUpQuestion);
+        inputEditTextSignUpFrgtAns = findViewById(R.id.tietSignUpAns);
         dao = new DAO(context);
     }
 
