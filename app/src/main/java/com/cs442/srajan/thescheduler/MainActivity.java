@@ -15,4 +15,9 @@ public class MainActivity extends AppCompatActivity {
         //To get the back button on Title Bar
         getSupportActionBar().setHomeButtonEnabled(true);
     }
+
+    public void startInputClassActivity(View view) {
+        //On click of the button open Input Classes activity
+        startActivity(new Intent(view.getContext(), InputClassActivity.class));
+    }
 }
