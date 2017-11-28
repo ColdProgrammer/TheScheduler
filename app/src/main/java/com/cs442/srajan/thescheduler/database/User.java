@@ -30,7 +30,6 @@ public class User {
         this.frgtquestion = frgtquestion;
         this.frgtanswer = frgtanswer;
         this.password = password;
-
         this.creditsTaking = creditsTaking;
     }
 
