@@ -23,6 +23,16 @@ public class StaticVariables {
     public static final String COLUMN_USER_FORGOT_QUESTION = "user_frgt_quest";
     public static final String COLUMN_USER_FORGOT_ANS = "user_frgt_ans";
     public static final String COLUMN_USER_PASSWORD = "user_password";
+    //Course table name
+    public static final String TABLE_COURSE = "course";
+    //Course Table Column names
+    public static final String COLUMN_COURSE_ID = "course_id";
+    public static final String COLUMN_COURSE_NUMBER = "course_num";
+    public static final String COLUMN_COURSE_NAME = "course_name";
+    public static final String COLUMN_COURSE_SPRING_YN = "course_spring_yn";
+    public static final String COLUMN_COURSE_DESCRIPTION = "course_desc";
+    public static final String COLUMN_COURSE_PREREQUISITES = "course_prereq";
+    public static final String COLUMN_COURSE_CREDITS = "course_credits";
 
     /**
      * Function to check if the edit text is empty
@@ -61,7 +71,7 @@ public class StaticVariables {
     //courseInfo = 3
     //coursePrereq = 4
     //courseCredits = 5
-    public static final String [][] ALL_COURSES = {
+    public static final String [][] ALL_COURSES ={
             { "	100	" , "	Introduction to the Profession	" , "	n	" , "	An introduction to science and engineering as a profession. Examines the problem-solving process used in engineering and science. Emphasizes the interdisciplinary and international nature of problem-solving and the need to evaluate solutions in terms of a variety of constraints: computational, financial, and social.	" , "	None	" , "	(1-2-2)	" } ,
             { "	104	" , "	Introduction to Computer Programming for Engineers	" , "	y	" , "	Introduces the use of high-level programming language as a problem-solving tool in engineering including basic data structures and algorithms, structured programming techniques, and software documentation. Designed for students who have had little or no prior experience with computer programming. Students should only take one of these courses (CS 104, CS 105, CS 110, CS 115).	" , "	None	" , "	(2-1-2)	" } ,
             { "	105	" , "	Introduction to Computer Programming	" , "	n	" , "	Introduces the use of high-level programming language as a problem-solving tool, including basic data structures and algorithms, structured programming techniques, and software documentation. Designed for students who have had little or no prior experience with computer programming. Students should only take one of these courses (CS 104, CS 105, CS 110, CS 115).	" , "	None	" , "	(2-1-2)	" } ,

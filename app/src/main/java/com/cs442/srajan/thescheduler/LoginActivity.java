@@ -23,11 +23,11 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         //To get the back button on Title Bar
         getSupportActionBar().setHomeButtonEnabled(true);
-
-        layoutLogin = (LinearLayout) findViewById(R.id.loginLinearLayout);
-        editTextUserName = (EditText) findViewById(R.id.tietLoginSignInUserName);
-        editTextPassword = (EditText) findViewById(R.id.tietSignInPassword);
+        layoutLogin = findViewById(R.id.loginLinearLayout);
+        editTextUserName = findViewById(R.id.tietLoginSignInUserName);
+        editTextPassword = findViewById(R.id.tietSignInPassword);
         databaseHelper = new DAO(LoginActivity.this);
+        new SavingCoursesAsyncTask(LoginActivity.this).execute();
     }
 
     public void signUpFunct(View view) {
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void signInFunct(View view) {
         //On click of the sign-in page
-        if(StaticVariables.checkEditTextIsEmpty(editTextPassword) && StaticVariables.checkEditTextIsEmpty(editTextPassword)) {
+        if(!(StaticVariables.checkEditTextIsEmpty(editTextPassword) && StaticVariables.checkEditTextIsEmpty(editTextPassword))) {
             if (databaseHelper.checkUser(editTextUserName.getText().toString(), editTextPassword.getText().toString())) {
                 //Correct Password
                 startActivity(new Intent(view.getContext(), MainActivity.class));

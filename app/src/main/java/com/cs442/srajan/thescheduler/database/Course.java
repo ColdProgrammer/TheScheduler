@@ -1,23 +1,31 @@
 package com.cs442.srajan.thescheduler.database;
 
+import java.security.Principal;
+
 /**
  * Created by p0rt on 11/26/17.
+ *
+ *
  */
 
 public class Course {
 
+    private int id;
     private int crn;
-    private int creditValue;
-
-    private String courseNumber;
-    private String courseName;
-    private String courseDescription;
+    private String creditValue;//credit
+    private String courseNumber;//class_id
+    private String courseName;//class_name
+    private String springClass;//offe_spring2018
+    private String courseDescription;//class_info
     private String courseProfessor;
+    private String prereq;//prereq
     private String courseDepartment;
     private String courseLocation;
 
+    //Default constructor
+    public Course(){}
     //Constructor for course item
-    public Course(int crn, int creditValue, String courseNumber, String courseName, String courseDescription, String courseProfessor, String courseDepartment, String courseLocation) {
+    public Course(int crn, String creditValue, String courseNumber, String courseName, String courseDescription, String courseProfessor, String courseDepartment, String courseLocation) {
         this.crn = crn;
         this.creditValue = creditValue;
         this.courseNumber = courseNumber;
@@ -28,6 +36,30 @@ public class Course {
         this.courseLocation = courseLocation;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getSpringClass() {
+        return springClass;
+    }
+
+    public void setSpringClass(String springClass) {
+        this.springClass = springClass;
+    }
+
+    public String getPrereq() {
+        return prereq;
+    }
+
+    public void setPrereq(String prereq) {
+        this.prereq = prereq;
+    }
+
     public int getCrn() {
         return crn;
     }
@@ -36,11 +68,11 @@ public class Course {
         this.crn = crn;
     }
 
-    public int getCreditValue() {
+    public String getCreditValue() {
         return creditValue;
     }
 
-    public void setCreditValue(int creditValue) {
+    public void setCreditValue(String creditValue) {
         this.creditValue = creditValue;
     }
 

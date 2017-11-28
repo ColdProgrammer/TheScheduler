@@ -22,13 +22,14 @@ public class User {
     //number of credits currently taking
     private int creditsTaking;
 
+    public User(){} //Default Constructor
+
     public User(int id, String name, String frgtquestion, String frgtanswer, String password, int creditsTaking) {
         this.id = id;
         this.name = name;
         this.frgtquestion = frgtquestion;
         this.frgtanswer = frgtanswer;
         this.password = password;
-
         this.creditsTaking = creditsTaking;
     }
 
@@ -70,11 +71,6 @@ public class User {
 
     public void setFrgtanswer(String frgtanswer) {
         this.frgtanswer = frgtanswer;
-    }
-
-    public void addCourse(Course course){
-        this.crnList.add(course.getCrn());
-        this.creditsTaking += course.getCreditValue();
     }
 
 }

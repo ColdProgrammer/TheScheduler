@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.cs442.srajan.thescheduler.StaticVariables;
 
@@ -20,6 +21,7 @@ import java.util.List;
 public class DAO extends SQLiteOpenHelper {
 
     // Database Version
+    private static final String TAG = "DAO";
     private static final int DATABASE_VERSION = StaticVariables.DATABASE_VERSION;
     // Database Name
     private static final String DATABASE_NAME = StaticVariables.DATABASE_NAME;
@@ -31,11 +33,28 @@ public class DAO extends SQLiteOpenHelper {
     private static final String COLUMN_USER_FORGOT_QUESTION = StaticVariables.COLUMN_USER_FORGOT_QUESTION;
     private static final String COLUMN_USER_FORGOT_ANS = StaticVariables.COLUMN_USER_FORGOT_ANS;
     private static final String COLUMN_USER_PASSWORD = StaticVariables.COLUMN_USER_PASSWORD;
+    //Course table name
+    public static final String TABLE_COURSE = StaticVariables.TABLE_COURSE;
+    //Course Table Column names
+    public static final String COLUMN_COURSE_ID = StaticVariables.COLUMN_COURSE_ID;
+    public static final String COLUMN_COURSE_NUMBER = StaticVariables.COLUMN_COURSE_NUMBER;
+    public static final String COLUMN_COURSE_NAME = StaticVariables.COLUMN_COURSE_NAME;
+    public static final String COLUMN_COURSE_SPRING_YN = StaticVariables.COLUMN_COURSE_SPRING_YN;
+    public static final String COLUMN_COURSE_DESCRIPTION = StaticVariables.COLUMN_COURSE_DESCRIPTION;
+    public static final String COLUMN_COURSE_PREREQUISITES = StaticVariables.COLUMN_COURSE_PREREQUISITES;
+    public static final String COLUMN_COURSE_CREDITS = StaticVariables.COLUMN_COURSE_CREDITS;
 
-    // create table sql query
+    // create table sql query - user
     private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
             + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_NAME + " TEXT,"
             + COLUMN_USER_FORGOT_QUESTION + " TEXT," + COLUMN_USER_FORGOT_ANS + " TEXT," + COLUMN_USER_PASSWORD + " TEXT" + ")";
+
+    // create table sql query - course
+    private String CREATE_COURSE_TABLE = "CREATE TABLE " + TABLE_COURSE + "("
+            + COLUMN_COURSE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_COURSE_NUMBER + " TEXT,"
+            + COLUMN_COURSE_NAME + " TEXT," + COLUMN_COURSE_SPRING_YN + " TEXT," +
+            COLUMN_COURSE_DESCRIPTION + " TEXT," + COLUMN_COURSE_PREREQUISITES + " TEXT," +
+            COLUMN_COURSE_CREDITS + " TEXT" + ")";
 
     // drop table sql query
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
@@ -193,7 +212,7 @@ public class DAO extends SQLiteOpenHelper {
         /**
          * Here query function is used to fetch records from user table this function works like we use sql query.
          * SQL query equivalent to this query function is
-         * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com' AND user_password = 'qwerty';
+         *
          */
         Cursor cursor = db.query(TABLE_USER, //Table to query
                 columns,                    //columns to return
@@ -208,6 +227,26 @@ public class DAO extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return cursorCount > 0;
+    }
 
+    /**
+     * This method to add courses into the courses table
+     *
+     * @param course
+     * @return true/false
+     */
+    public void addCourses(Course course) {
+        Log.d(TAG +" value of the course", course.getCourseNumber().toString());
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_COURSE_NUMBER, course.getCourseNumber());
+        values.put(COLUMN_COURSE_NAME, course.getCourseName());
+        values.put(COLUMN_COURSE_SPRING_YN, course.getSpringClass());
+        values.put(COLUMN_COURSE_DESCRIPTION, course.getCourseDescription());
+        values.put(COLUMN_COURSE_PREREQUISITES, course.getPrereq());
+        values.put(COLUMN_COURSE_CREDITS, course.getCreditValue());
+        // Inserting Row
+        db.insert(TABLE_COURSE, null, values);
+        db.close();
     }
 }
