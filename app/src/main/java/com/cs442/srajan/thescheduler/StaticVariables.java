@@ -23,6 +23,16 @@ public class StaticVariables {
     public static final String COLUMN_USER_FORGOT_QUESTION = "user_frgt_quest";
     public static final String COLUMN_USER_FORGOT_ANS = "user_frgt_ans";
     public static final String COLUMN_USER_PASSWORD = "user_password";
+    //Course table name
+    public static final String TABLE_COURSE = "course";
+    //Course Table Column names
+    public static final String COLUMN_COURSE_ID = "course_id";
+    public static final String COLUMN_COURSE_NUMBER = "course_num";
+    public static final String COLUMN_COURSE_NAME = "course_name";
+    public static final String COLUMN_COURSE_SPRING_YN = "course_spring_yn";
+    public static final String COLUMN_COURSE_DESCRIPTION = "course_desc";
+    public static final String COLUMN_COURSE_PREREQUISITES = "course_prereq";
+    public static final String COLUMN_COURSE_CREDITS = "course_credits";
 
     /**
      * Function to check if the edit text is empty

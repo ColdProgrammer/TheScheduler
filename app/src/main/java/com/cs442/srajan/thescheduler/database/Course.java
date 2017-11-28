@@ -1,5 +1,7 @@
 package com.cs442.srajan.thescheduler.database;
 
+import java.security.Principal;
+
 /**
  * Created by p0rt on 11/26/17.
  *
@@ -8,6 +10,7 @@ package com.cs442.srajan.thescheduler.database;
 
 public class Course {
 
+    private int id;
     private int crn;
     private String creditValue;//credit
     private String courseNumber;//class_id
@@ -31,6 +34,14 @@ public class Course {
         this.courseProfessor = courseProfessor;
         this.courseDepartment = courseDepartment;
         this.courseLocation = courseLocation;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getSpringClass() {

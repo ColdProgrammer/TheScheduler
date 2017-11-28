@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         editTextUserName = findViewById(R.id.tietLoginSignInUserName);
         editTextPassword = findViewById(R.id.tietSignInPassword);
         databaseHelper = new DAO(LoginActivity.this);
-        new SavingCoursesAsyncTask().execute();
+        new SavingCoursesAsyncTask(LoginActivity.this).execute();
     }
 
     public void signUpFunct(View view) {
