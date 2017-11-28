@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void signInFunct(View view) {
         //On click of the sign-in page
-        if(StaticVariables.checkEditTextIsEmpty(editTextPassword) && StaticVariables.checkEditTextIsEmpty(editTextPassword)) {
+        if(!(StaticVariables.checkEditTextIsEmpty(editTextPassword) && StaticVariables.checkEditTextIsEmpty(editTextPassword))) {
             if (databaseHelper.checkUser(editTextUserName.getText().toString(), editTextPassword.getText().toString())) {
                 //Correct Password
                 startActivity(new Intent(view.getContext(), MainActivity.class));
