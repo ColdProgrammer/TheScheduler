@@ -20,8 +20,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,ClassListActivity.class);
         startActivity(intent);
     }
-    public void startInputClassActivity(View view) {
-        //On click of the button open Input Classes activity
-        startActivity(new Intent(view.getContext(), InputClassActivity.class));
-    }
+
 }
