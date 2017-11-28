@@ -47,6 +47,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".InputClassActivity"></activity>
+        <activity android:name=".ClassListActivity"></activity>
+        <activity android:name=".DetailActivity"></activity>
     </application>
 
 </manifest>
