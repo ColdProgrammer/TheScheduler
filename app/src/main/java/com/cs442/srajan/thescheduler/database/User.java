@@ -73,14 +73,4 @@ public class User {
         this.frgtanswer = frgtanswer;
     }
 
-    public void addCourse(Course course){
-        this.crnList.add(course.getCrn());
-        this.creditsTaking += course.getCreditValue();
-    }
-
-    public void removeCourse(Course course){
-        this.crnList.remove(course.getCrn());
-        this.creditsTaking -= course.getCreditValue();
-    }
-
 }

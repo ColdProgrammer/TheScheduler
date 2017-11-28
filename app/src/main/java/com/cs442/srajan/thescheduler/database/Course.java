@@ -19,6 +19,8 @@ public class Course {
     private String courseDepartment;
     private String courseLocation;
 
+    //Default constructor
+    public Course(){}
     //Constructor for course item
     public Course(int crn, String creditValue, String courseNumber, String courseName, String courseDescription, String courseProfessor, String courseDepartment, String courseLocation) {
         this.crn = crn;
