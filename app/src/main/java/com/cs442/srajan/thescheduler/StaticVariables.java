@@ -291,6 +291,25 @@ public static final String [][] COURSE_TIMES = {
         { "	763	"}
         };
 
+        //note if 201, don't need 115 116
+public static final String [][] CS_COURSE_REQUIREMENTS = {
+        {"	100 "},
+        {"	115	"},
+        {"	116	"},
+        {"	330	"},
+        {"	331	"},
+        {"	350	"},
+        {"	351	"},
+        {"	425	"},
+        {"	430	"},
+        {"	440	"},
+        {"	450	"},
+        {"	485	"},
+        {"	487	"},
+        {"	0	"},
+        {"	0	"},
+        {"	0	"},
+};
 
 
 }
