@@ -37,9 +37,9 @@ public class StaticVariables {
     /**
      * Function to check if the edit text is empty
      *
-     * @param editText
+     * @param editText edit text
      * @return false if edit text has a value
-     * @return true if edit text is null
+     * return true if edit text is null
      *
      **/
     public static boolean checkEditTextIsEmpty(EditText editText){
@@ -50,10 +50,10 @@ public class StaticVariables {
     /**
      * Function to return a SnackBar with custom Theme
      *
-     * @param view
-     * @param text
-     * @param duration
-     * @param color
+     * @param view shows view
+     * @param text shows text
+     * @param duration shows duration
+     * @param color shows color
      * @return snackbar
      *
      * */
@@ -181,6 +181,115 @@ public class StaticVariables {
             { "	750	" , "	Computer Aided Software Engineering	" , "	n	" , "	This course presents the state-of-the-art of computer-aided software engineering technologies. CASE encompasses a collection of automated tools and methods that provide automated support to the software specification, design, development, testing, maintenance, and management of large and complex software systems. Students will develop working understanding of CASE methodologies and tools.	" , "	CS487	" , "	(2-0-2)	" } ,
             { "	763	" , "	Automated Software Testing	" , "	n	" , "	This course will examine both the state-of-the-art and the state-of-practice in automated software testing on a system level and an unit level. Relevant issues include theoretical foundations of automated testing, automation tools and techniques, empirical studies and industrial experience. Key topics include, but are not limited to: Fundamentals of automated software testing, automated test design, modeling and generation, automated test execution, automated test management, automated test metrics, automated tools, automated feature and regression testing Environments to support cost-effective automated software testing, discussions on the barriers to industrial use of automated testing.	" , "	CS487	" , "	(2-0-2)	" }
 };
+public static final String [][] COURSE_TIMES = {
+        { "	100	"},
+        { "	104	" , "	Class ~ Yousef Elmehdwi ~ MW from 1:50pm to 2:40pm	" , "	Pandaliyampalayam TR 3:15pm-4:05pm	" , "	Lab ~ Yousef Elmehdwi ~ F from 1:50pm to 2:40pm	" , "	Lab ~ Yousef Elmehdwi ~ F from 1:50pm to 2:40pm	" , "	Lab ~ W from 3:15pm to 4:05pm	" , "	Lab~ W from 3:15pm to 4:05pm	"},
+        { "	105	"},
+        { "	110	" , "	Class ~ Matthew Bauer ~ M from 10am to 11:15am	" , "	Lab~ Matthew Bauer ~ W from 10am to 11:15am	" , "	Lab ~ Matthew Bauer ~ W from 10am to 11:15am 	"},
+        { "	115	" , "	Class ~ Jon Hanrath ~ MW from 10am to 10:50am	" , "	Class ~ Yousef Elmehdwi ~ W from 5pm to 6:40pm 	" , "	Lab~ Jon Hanrath ~ F from 10am to 10:50am	" , "	Lab ~ Yousef Elmehdwi ~ W from 6:50pm to 7:40pm 	"},
+        { "	116	" , "	Class ~ Matthew Bauer ~ MW from 9am to 9:50am	" , "	Class ~ ~ TR from 1:50pm to 2:40pm	" , "	Class ~ John Korah ~ M from 5pm to 6:15pm	" , "	Lab ~ Matthew Bauer ~ F from 9am to 9:50am	" , "	Lab ~ Matthew Bauer ~ F from 9am to 9:50am	" , "	Lab ~ ~ W from 1:50pm to 2:40pm 	" , "	Lab ~ ~ W from 1:50pm to 2:40pm	" , "	Lab~ John Korah ~ M from 6:25pm to 7:40pm 	" , "	Lab~ John Korah ~ M from 6:25pm to 7:40pm	"},
+        { "	201	" , "	Class ~ Dylan Boliske ~ MW from 5pm to 6:15pm	" , "	Lab~ Dylan Boliske ~ F from 5pm to 6:40pm	" , "	Internet ~ Dylan Boliske	"},
+        { "	330	" , "	Class ~ ~ TR from 10am to 11:15am		Lab ~ ~ W from 10am to 10:50am	" , "	Independent Study/Research ~ Matthew Bauer	"},
+        { "	331	" , "	Class ~ Matthew Bauer ~ MW from 11:25am to 12:40pm	" , "	Class ~ Michael Saelee ~ WF from 1:50pm to 3:05pm	" , "	Class ~ Matthew Bauer ~ F from 11:25am to 12:15pm	" , "	Lab ~ Matthew Bauer ~ F from 11:25am to 12:15pm	" , "	Lab ~ Michael Saelee ~ M from 1:50pm to 2:40pm	" , "	Internet ~ Michael Saelee	"},
+        { "	350	" , "	Class ~ Kyle Hale ~ MW from 3:15pm to 4:30pm	" , "	Class ~ Kyle Hale ~ F from 3:15pm to 4:05pm	" , "	Lab ~ Kyle Hale ~ F from 3:15pm to 4:05pm	" , "	Lab ~ Kyle Hale ~ F from 3:15pm to 4:05pm	"},
+        { "	351	" , "	Class ~ Michael Saelee ~ WF from 3:15pm to 4:30pm	" , "	Lab ~ Michael Saelee ~ M from 3:15pm to 4:05pm	" , "	Lab ~ Michael Saelee ~ M from 3:15pm to 4:05pm	" , "	Lab ~ Michael Saelee ~ M from 3:15pm to 4:05pm	"},
+        { "	397	"},
+        { "	401	" , "	Class ~ Michael Choi ~ T from 6:25pm to 8:05pm	" , "	Class ~ Michael Choi ~ R from 6:25pm to 8:05pm	" , "	Internet ~ Michael Choi	" , "	Internet ~ Michael Choi	"},
+        { "	402	" , "	Class ~ Virgil Bistriceanu ~ M from 6:25pm to 8:05pm	" , "	Class ~ Virgil Bistriceanu ~ W from 6:25pm to 8:05pm	" , "	Internet ~ Virgil Bistriceanu	" , "	Internet ~ Virgil Bistriceanu	"},
+        { "	403	"},
+        { "	406	"},
+        { "	411	"},
+        { "	422	" , "	Class ~ Vijay Gurbani ~ T from 6:25pm to 9:05pm	" , "	Internet ~ Vijay Gurbani	" , "	Internet ~ Vijay Gurbani	"},
+        { "	425	" , "	Class ~ Omar Aldawud ~ R from 6:25pm to 9:05pm	" , "	Internet ~ Omar Aldawud	" , "	Internet ~ Omar Aldawud	"},
+        { "	429	" , "	Class ~ John Korah ~ T from 5pm to 7:40pm	" , "	Internet ~ John Korah	" , "	Internet ~ John Korah	"},
+        { "	430	" , "	Class ~ Edward Reingold ~ MW from 11:25am to 12:40pm	" , "	Class ~ Edward Reingold ~ MW from 10am to 11:15am in TBA	" , "	Lab ~ Edward Reingold ~ F from 11:25am to 12:15pm	" , "	Lab ~ Edward Reingold ~ F from 10am to 10:50am	" , "	Internet ~ Edward Reingold 	" , "	Internet ~ Edward Reingold"},
+        { "	440	" , "	Class ~ James Sasaki ~ MW from 1:50pm to 3:05pm	"},
+        { "	442	" , "	Class ~ Christopher Hield ~ T from 5pm to 7:40pm	" , "	Internet ~ Christopher Hield	" , "	Internet ~ Christopher Hield	"},
+        { "	443	"},
+        { "	445	"},
+        { "	447	"},
+        { "	450	" , "	Class ~ Wu-Hon Leung ~ MW from 10am to 11:15am	" , "	Internet ~ Wu-Hon Leung	" , "	Internet ~ Wu-Hon Leung	"},
+        { "	451	" , "	Class ~ Zhiling Lan ~ TR from 11:25am to 12:40pm	" , "	Internet ~ Zhiling Lan	" , "	Internet ~ Zhiling Lan	"},
+        { "	455	" , "	Class ~ Edward Chlebus ~ TR from 11:25am to 12:40pm	" , "	Internet ~ Edward Chlebus	" , "	Internet ~ Edward Chlebus	"},
+        { "	456	"},
+        { "	458	"},
+        { "	470	"},
+        { "	480	"},
+        { "	481	"},
+        { "	482	"},
+        { "	485	" , "	Class ~ Jon Hanrath ~ MW from 8:35am to 9:50am	" , "	Class ~ Jon Hanrath ~ MW from 11:25am to 12:40pm	" , "	Independent Study/Research ~ Matthew Bauer	"},
+        { "	487	" , "	Class ~ Dennis Hood ~ TR from 10am to 11:15am	" , "	Class ~ Dennis Hood ~ TR from 1:50pm to 3:05pm	" , "	Internet ~ Dennis Hood	" , "	Internet ~ Dennis Hood	"},
+        { "	491	" , "	Independent Study/Research ~ Aron Culotta	" , "	Independent Study/Research ~ Edward Reingold	" , "	Independent Study/Research ~ Mustafa Bilgic	" , "	Independent Study/Research ~ Gruia Calinescu 	" , "	Independent Study/Research ~ Xian-He Sun	" , "	Independent Study/Research ~ Gady Agam	" , "	Independent Study/Research ~ Sanjiv Kapoor	"},
+        { "	495	" , "	Class ~ Michael Saelee ~ WF from 10am to 11:15am	"},
+        { "	497	" , "	Class ~ Wu-Hon Leung	" , "	Independent Study/Research ~ Michael Saelee	" , "	Independent Study/Research ~ Shlomo Argamon	" , "	Independent Study/Research ~ Matthew Bauer	" , "	Independent Study/Research ~ Zhiling Lan	" , "	Independent Study/Research ~	" , "	Independent Study/Research ~ Xin Chen	" , "	Independent Study/Research ~ Ioan Raicu	" , "	Independent Study/Research ~ Dong Jin	" },
+        { "	511	"},
+        { "	512	"},
+        { "	513	" , "	Class ~ Xin Chen ~ F from 6:25pm to 9:05pm	"},
+        { "	520	" , "	Class ~ Boris Glavic ~ MW from 1:50pm to 3:05pm	" , "	Internet ~ Boris Glavic	" , "	Internet ~ Boris Glavic	"},
+        { "	521	"},
+        { "	522	" , "	Class ~ Irina Matveeva ~ R from 6:25pm to 9:05pm	" , "	Internet ~ Irina Matveeva		Internet ~ Irina Matveeva	"},
+        { "	525	" , "	Class ~ Yousef Elmehdwi ~ MW from 11:25am to 12:40pm	" , "	Internet ~ Yousef Elmehdwi	" , "	Internet ~ Yousef Elmehdwi	"},
+        { "	529	"},
+        { "	530	" , "	Class ~ Gruia Calinescu ~ TR from 10am to 11:15am 	" , "	Class ~ Gruia Calinescu ~ TR from 10am to 11:15am	" , "	Internet ~ Gruia Calinescu	" , "	Internet ~ Gruia Calinescu	"},
+        { "	531	"},
+        { "	532	"},
+        { "	533	"},
+        { "	535	"},
+        { "	536	" , "	Class ~ James Sasaki ~ MW from 3:15pm to 4:30pm	" , "	Class ~ James Sasaki ~ MW from 3:15pm to 4:30pm	" , "	Internet ~ James Sasaki	" , "	Internet ~ James Sasaki	"},
+        { "	537	"},
+        { "	538	"},
+        { "	539	" , "	Class ~ Sanjiv Kapoor ~ TR from 1:50pm to 3:05pm	" , "	Internet ~ Sanjiv Kapoor	" , "	Internet ~ Sanjiv Kapoor	"},
+        { "	540	"},
+        { "	541	"},
+        { "	542	" , "	 Class ~ Edward Chlebus ~ TR from 10am to 11:15am	" , "	Internet ~ Edward Chlebus	" , "	Internet ~ Edward Chlebus	"},
+        { "	544	"},
+        { "	545	"},
+        { "	546	"},
+        { "	547	" , "	Class ~ Peng-Jun Wan ~ T from 6:25pm to 9:05pm	" , "	Internet ~ Peng-Jun Wan	" , "	Internet ~ Peng-Jun Wan	"},
+        { "	548	"},
+        { "	549	"},
+        { "	550	" , "	Class ~ Xian-He Sun ~ MW from 3:15pm to 4:30pm	" , "	Class ~ Xian-He Sun ~ MW from 3:15pm to 4:30pm	" , "	Internet ~ Xian-He Sun	" , "	Internet ~ Xian-He Sun	"},
+        { "	551	"},
+        { "	552	"},
+        { "	553	" , "	Class ~ Ioan Raicu ~ MW from 11:25am to 12:40pm	" , "	Internet ~ Ioan Raicu	" , "	Internet ~ Ioan Raicu	"},
+        { "	554	"},
+        { "	555	"},
+        { "	556	"},
+        { "	557	"},
+        { "	558	" , "	Class ~ Dong Jin ~ TR from 3:15pm to 4:30pm	" , "	Internet ~ Dong Jin	" , "	Internet ~ Dong Jin	"},
+        { "	559	"},
+        { "	560	"},
+        { "	561	"},
+        { "	565	"},
+        { "	566	"},
+        { "	570	"},
+        { "	572	"},
+        { "	579	" , "	Class ~ Aron Culotta ~ MW from 1:50pm to 3:05pm	" , "	Internet ~ Aron Culotta	" , "	Internet ~ Aron Culotta	"},
+        { "	580	"},
+        { "	581	"},
+        { "	582	"},
+        { "	583	"},
+        { "	584	" , "	Class ~ Wai Gen Yee ~ M from 6:25pm to 9:05pm	" , "	Internet ~ Wai Gen Yee	" , "	Internet ~ Wai Gen Yee	"},
+        { "	585	" , "	Class ~ Shlomo Argamon ~ TR from 11:25am to 12:40pm	" , "	Internet ~ Shlomo Argamon	" , "	Internet ~ Shlomo Argamon	"},
+        { "	586	" , "	Class ~ Bogdan Korel ~ MW from 5pm to 6:15pm	" , "	Internet ~ Bogdan Korel	" , "	Internet ~ Bogdan Korel	"},
+        { "	587	" , "	Class ~ Atef Bader ~ F from 6:25pm to 9:05pm	" , "	Internet ~ Atef Bader	" , "	Internet ~ Atef Bader	"},
+        { "	588	"},
+        { "	589	"},
+        { "	590	"},
+        { "	591	" , "	Many Sections Available	"},
+        { "	594	" , "	Many Sections Available	"},
+        { "	595	" , "	Class ~ Yuan Hong ~ T from 6:25pm to 9:05pm	"},
+        { "	597	" , "	Many Sections Available	"},
+        { "	612	"},
+        { "	630	"},
+        { "	642	"},
+        { "	681	" },
+        { "	689	"},
+        { "	691	" , "	Many Sections Available	" , "	Internet ~ Ioan Raicu	"},
+        { "	695	" , "	Class ~ Yuan Hong ~ T from 5pm to 6:15pm	"},
+        { "	750	"},
+        { "	763	"}
+        };
 
 
 
