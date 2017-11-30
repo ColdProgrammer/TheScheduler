@@ -53,8 +53,7 @@
         <activity android:name=".DetailActivity" />
         <activity
             android:name=".ViewAllClasses"
-            android:label="@string/title_activity_view_all_classes"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/title_activity_view_all_classes"></activity>
     </application>
 
 </manifest>
