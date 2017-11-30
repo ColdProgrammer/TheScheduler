@@ -23,7 +23,9 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.CourseVi
         public CourseViewHolder(View itemView) {
             super(itemView);
             cardView = itemView.findViewById(R.id.cardview_courses);
-            textViewCourse = itemView.findViewById()
+            textViewCourse = itemView.findViewById(R.id.tv_course_name);
+            textViewSem = itemView.findViewById(R.id.tv_course_sem);
+            textViewLoc = itemView.findViewById(R.id.tv_course_loc);
         }
     }
 
