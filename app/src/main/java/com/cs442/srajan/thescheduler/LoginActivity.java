@@ -48,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
 
         startActivity(new Intent(view.getContext(), MainActivity.class));
 
+        // Srajan check this out plz
 
 //        if(!(StaticVariables.checkEditTextIsEmpty(editTextPassword) && StaticVariables.checkEditTextIsEmpty(editTextPassword))) {
 //            if (databaseHelper.checkUser(this,editTextUserName.getText().toString(), editTextPassword.getText().toString())) {

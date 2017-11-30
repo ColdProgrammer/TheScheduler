@@ -18,6 +18,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cs442.srajan.thescheduler.MainActivity" />
         </activity>
+        <activity android:name=".LocationChooserActivity" >
+            <!-- Parent Activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs442.srajan.thescheduler.LocationChooserActivity" />
+        </activity>
         <activity
             android:name=".FutureClassesActivity"
             android:label="@string/title_activity_future_classes">
