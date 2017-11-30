@@ -233,8 +233,12 @@ public class DAO extends SQLiteOpenHelper {
             //Saving the username and userID into shared preference
             SharedPreferences sharedPreferences = context.getSharedPreferences(StaticVariables.SHAREDPREFERENCE_USER_NAME,Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString(StaticVariables.USER_ID_USER_ID, cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID)));
-            editor.putString(StaticVariables.USER_ID_USER_NAME, cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
+            String userID = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID));
+            String userName = cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME));
+            editor.putString(StaticVariables.USER_ID_USER_ID, userID);
+            editor.putString(StaticVariables.USER_ID_USER_NAME, userName);
+            editor.commit();
+            Log.d(TAG, "The variables are "+ userID+ " and "+userName);
         }
         cursor.close();
         db.close();
