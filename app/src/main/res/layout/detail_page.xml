@@ -14,8 +14,8 @@
         android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Input course for next semester"
-        android:onClick="addCourseToStudent"
+        android:text="Choose Location"
+        android:onClick="openChooseLocationActivity"
 
         />
     <TextView

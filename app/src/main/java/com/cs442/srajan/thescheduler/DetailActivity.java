@@ -1,6 +1,7 @@
 package com.cs442.srajan.thescheduler;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
@@ -45,9 +46,12 @@ public class DetailActivity extends Activity{
         return courseDes;
     }
 
-    //When the input class button is clicked, add class to database
-    public void addCourseToStudent(View view){
-        Toast.makeText(this,name,Toast.LENGTH_SHORT).show();
+    public void openChooseLocationActivity(View view){
+        LocationChooserActivity.name = name;
+        startActivity(new Intent(this, LocationChooserActivity.class));
+
     }
+
+
 
 }
