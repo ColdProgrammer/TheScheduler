@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.cs442.srajan.thescheduler.Adapter.RecycleAdapter;
+import com.cs442.srajan.thescheduler.Adapter.User_sem_details;
+
 public class ViewAllClasses extends AppCompatActivity {
 
     RecyclerView recyclerView;
@@ -19,5 +22,8 @@ public class ViewAllClasses extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
+        User_sem_details user_sem_details = new User_sem_details();
+        RecycleAdapter recycleAdapter = new RecycleAdapter(user_sem_details.initializeData());
+        recyclerView.setAdapter(recycleAdapter);
     }
 }

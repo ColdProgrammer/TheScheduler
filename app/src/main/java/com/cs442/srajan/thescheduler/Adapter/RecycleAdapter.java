@@ -2,11 +2,14 @@ package com.cs442.srajan.thescheduler.Adapter;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.cs442.srajan.thescheduler.R;
+
+import java.util.ArrayList;
 
 /**
  * Created by project on 29/11/17.
@@ -29,18 +32,37 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.CourseVi
         }
     }
 
+    ArrayList<User_sem_details> user_sem_list;
+
+    public RecycleAdapter(ArrayList user_sem_list){
+        this.user_sem_list = user_sem_list;
+    }
+
     @Override
     public CourseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.contains_view_all_classes, parent,false);
+        CourseViewHolder viewHolder = new CourseViewHolder(v);
+        return viewHolder;
+
     }
 
     @Override
     public void onBindViewHolder(CourseViewHolder holder, int position) {
 
+        holder.textViewCourse.setText(user_sem_list.get(position).course_name.getCourseName());
+        holder.textViewSem.setText(user_sem_list.get(position).sem);
+        holder.textViewLoc.setText(user_sem_list.get(position).course_name.getCourseLocation());
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return user_sem_list.size();
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
     }
 }
