@@ -50,9 +50,9 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.CourseVi
     @Override
     public void onBindViewHolder(CourseViewHolder holder, int position) {
 
-        holder.textViewCourse.setText(user_sem_list.get(position).course_name.getCourseName());
-        holder.textViewSem.setText(user_sem_list.get(position).sem);
-        holder.textViewLoc.setText(user_sem_list.get(position).course_name.getCourseLocation());
+        holder.textViewCourse.setText("Course : "+user_sem_list.get(position).course_name.getCourseName());
+        holder.textViewSem.setText("Sem : "+user_sem_list.get(position).sem);
+        holder.textViewLoc.setText("Location : "+user_sem_list.get(position).course_name.getCourseLocation());
 
     }
 
