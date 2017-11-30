@@ -2,11 +2,13 @@ package com.cs442.srajan.thescheduler.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.cs442.srajan.thescheduler.R;
 import com.cs442.srajan.thescheduler.StaticVariables;
 
 import java.util.ArrayList;
@@ -195,11 +197,15 @@ public class DAO extends SQLiteOpenHelper {
      * @param password
      * @return true/false
      */
-    public boolean checkUser(String userId, String password) {
+    public boolean checkUser(Context context, String userId, String password) {
 
         // array of columns to fetch
         String[] columns = {
-                COLUMN_USER_ID
+                COLUMN_USER_ID,
+                COLUMN_USER_FORGOT_QUESTION,
+                COLUMN_USER_FORGOT_ANS,
+                COLUMN_USER_NAME,
+                COLUMN_USER_PASSWORD
         };
         SQLiteDatabase db = this.getReadableDatabase();
         // selection criteria
@@ -223,7 +229,13 @@ public class DAO extends SQLiteOpenHelper {
                 null);                      //The sort order
 
         int cursorCount = cursor.getCount();
-
+        if(cursorCount > 0){
+            //Saving the username and userID into shared preference
+            SharedPreferences sharedPreferences = context.getSharedPreferences(StaticVariables.SHAREDPREFERENCE_USER_NAME,Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(StaticVariables.USER_ID_USER_ID, cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID)));
+            editor.putString(StaticVariables.USER_ID_USER_NAME, cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
+        }
         cursor.close();
         db.close();
         return cursorCount > 0;

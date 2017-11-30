@@ -16,6 +16,7 @@
     <string name="error_no_details">Enter all the details</string>
     <string name="title_activity_future_classes">Future Classes</string>
     <string name="ctocomplete">Courses To Be Completed</string>
+
     <string-array name="locations_list">
         <item>AM</item>
         <item>CR</item>
@@ -26,9 +27,7 @@
         <item>SB</item>
         <item>WH</item>
     </string-array>
-
-
-    <string name="large_text"> <!-- IE sample list of classes-->
+    <string name="large_text">
         CS 100 - Introduction to the Profession\n
         CS 104 - Introduction to Computer Programming for Engineers\n
         CS 105 - Introduction to Computer Programming\n
@@ -155,10 +154,5 @@
         CSP 595 - Topics in Computer Science Professional Master\n
         "
     </string>
-
-
     <string name="action_settings">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

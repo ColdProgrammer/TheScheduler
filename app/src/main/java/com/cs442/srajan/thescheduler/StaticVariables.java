@@ -33,7 +33,11 @@ public class StaticVariables {
     public static final String COLUMN_COURSE_DESCRIPTION = "course_desc";
     public static final String COLUMN_COURSE_PREREQUISITES = "course_prereq";
     public static final String COLUMN_COURSE_CREDITS = "course_credits";
-
+    //SharedPreferenceVariables
+    public static final String SHAREDPREFERENCE_USER_NAME = "user_details";
+    //In user_details shared preference
+    public static final String USER_ID_USER_ID = "userId";
+    public static final String USER_ID_USER_NAME = "username";
     /**
      * Function to check if the edit text is empty
      *
