@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.cs442.srajan.thescheduler.R;
 import com.cs442.srajan.thescheduler.StaticVariables;
 
 import java.util.ArrayList;
@@ -202,15 +201,13 @@ public class DAO extends SQLiteOpenHelper {
         // array of columns to fetch
         String[] columns = {
                 COLUMN_USER_ID,
-                COLUMN_USER_FORGOT_QUESTION,
-                COLUMN_USER_FORGOT_ANS,
                 COLUMN_USER_NAME,
-                COLUMN_USER_PASSWORD
         };
         SQLiteDatabase db = this.getReadableDatabase();
         // selection criteria
         String selection = COLUMN_USER_NAME + " = ?" + " AND " + COLUMN_USER_PASSWORD + " = ?";
-
+        String sortOrder =
+                COLUMN_USER_NAME + " ASC";
         // selection arguments
         String[] selectionArgs = {userId, password};
 
@@ -226,13 +223,14 @@ public class DAO extends SQLiteOpenHelper {
                 selectionArgs,              //The values for the WHERE clause
                 null,                       //group the rows
                 null,                       //filter by row groups
-                null);                      //The sort order
+                sortOrder);                      //The sort order
 
         int cursorCount = cursor.getCount();
         if(cursorCount > 0){
             //Saving the username and userID into shared preference
             SharedPreferences sharedPreferences = context.getSharedPreferences(StaticVariables.SHAREDPREFERENCE_USER_NAME,Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
+            cursor.moveToFirst();
             String userID = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID));
             String userName = cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME));
             editor.putString(StaticVariables.USER_ID_USER_ID, userID);
@@ -262,7 +260,7 @@ public class DAO extends SQLiteOpenHelper {
         values.put(COLUMN_COURSE_PREREQUISITES, course.getPrereq());
         values.put(COLUMN_COURSE_CREDITS, course.getCreditValue());
         // Inserting Row
-        db.insert(TABLE_COURSE, null, values);
+        //db.insert(TABLE_COURSE, null, values);
         db.close();
     }
 }

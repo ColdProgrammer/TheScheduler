@@ -12,7 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <!-- Parent Activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs442.srajan.thescheduler.MainActivity" />
+        </activity>
         <activity
             android:name=".FutureClassesActivity"
             android:label="@string/title_activity_future_classes">
@@ -49,12 +54,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClassListActivity" />
-        <activity android:name=".DetailActivity" />
+        <activity android:name=".ClassListActivity" >
+            <!-- Parent Activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs442.srajan.thescheduler.ClassListActivity" />
+        </activity>
+        <activity android:name=".DetailActivity" >
+            <!-- Parent Activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs442.srajan.thescheduler.DetailActivity" />
+        </activity>
         <activity
             android:name=".ViewAllClasses"
-            android:label="@string/title_activity_view_all_classes" />
-        <activity android:name=".LocationChooserActivity"></activity>
+            android:label="@string/title_activity_view_all_classes">
+            <!-- Parent Activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs442.srajan.thescheduler.ViewAllClasses" />
+        </activity>
     </application>
 
 </manifest>

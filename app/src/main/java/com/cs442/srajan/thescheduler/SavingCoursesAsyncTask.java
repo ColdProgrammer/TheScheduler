@@ -5,7 +5,6 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.cs442.srajan.thescheduler.database.Course;
-import com.cs442.srajan.thescheduler.database.DAO;
 
 /**
  * Created by project on 27/11/17.
@@ -37,7 +36,7 @@ public class SavingCoursesAsyncTask extends AsyncTask {
                 course.setCreditValue(courseArray[5].trim().toString());
 
                 //Now that we have all the courses we have to enter them into the database
-                new DAO(context).addCourses(course);
+               // new DAO(context).addCourses(course);
             }
         }
         return null;
