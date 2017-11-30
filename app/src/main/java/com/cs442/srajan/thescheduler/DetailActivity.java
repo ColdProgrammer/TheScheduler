@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 /**
  * Created by IronMan on 11/28/2017.
+ *
  */
 
 public class DetailActivity extends Activity{
@@ -21,7 +22,7 @@ public class DetailActivity extends Activity{
         String num = name;
         Toast.makeText(this, "sajfd"+num, Toast.LENGTH_SHORT).show();
         String courseDes=checkDes(num);
-        TextView tv=(TextView)findViewById(R.id.detailClass);
+        TextView tv= findViewById(R.id.detailClass);
         tv.setText(Html.fromHtml("<b> CS "+name+"</b>"+" :"+courseDes));
 
     }
