@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +45,9 @@ public class DetailActivity extends Activity{
         return courseDes;
     }
 
-
+    //When the input class button is clicked, add class to database
+    public void addCourseToStudent(View view){
+        Toast.makeText(this,name,Toast.LENGTH_SHORT).show();
+    }
 
 }
