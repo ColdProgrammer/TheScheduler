@@ -27,4 +27,8 @@ public class MainActivity extends AppCompatActivity {
         //Opens the current courses selected
         startActivity(new Intent(this, ViewAllClasses.class));
     }
+
+    public void goToMaps(View view) {
+        startActivity(new Intent(this, LocationActivity.class));
+    }
 }
