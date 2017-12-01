@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.cs442.srajan.thescheduler.Adapter.User_sem_details;
 import com.cs442.srajan.thescheduler.StaticVariables;
 
 import java.util.ArrayList;
@@ -300,7 +301,7 @@ public class DAO extends SQLiteOpenHelper {
         values.put(COLUMN_COURSE_NAME, course_name);
         values.put(COLUMN_USER_COURSE_LOC, course_loc);
         // Inserting Row
-        db.insert(TABLE_COURSE, null, values);
+        db.insert(TABLE_USER_COURSE, null, values);
         db.close();
     }
 
@@ -309,22 +310,25 @@ public class DAO extends SQLiteOpenHelper {
      *
      * @param userid
      * @param username
-     * @result ArrayList
+     * @result List
      *
      * */
-    public List<User> getAllCourses() {
+    public List<User_sem_details> getAllCourses(String userid, String username) {
         // array of columns to fetch
         String[] columns = {
-                COLUMN_USER_ID,
-                COLUMN_USER_FORGOT_QUESTION,
-                COLUMN_USER_FORGOT_ANS,
-                COLUMN_USER_NAME,
-                COLUMN_USER_PASSWORD
+                COLUMN_USER_COURSE_SEM,
+                COLUMN_COURSE_NAME,
+                COLUMN_USER_COURSE_LOC,
         };
         // sorting orders
         String sortOrder =
                 COLUMN_USER_NAME + " ASC";
-        List<User> userList = new ArrayList<User>();
+        String selection = COLUMN_USER_ID + " = ?" + " AND " + COLUMN_USER_NAME + " = ?";
+
+        // selection arguments
+        String[] selectionArgs = {userid, username};
+
+        List<User_sem_details> usersemList = new ArrayList();
 
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -336,8 +340,8 @@ public class DAO extends SQLiteOpenHelper {
          */
         Cursor cursor = db.query(TABLE_USER, //Table to query
                 columns,    //columns to return
-                null,        //columns for the WHERE clause
-                null,        //The values for the WHERE clause
+                selection,        //columns for the WHERE clause
+                selectionArgs,        //The values for the WHERE clause
                 null,       //group the rows
                 null,       //filter by row groups
                 sortOrder); //The sort order
@@ -346,20 +350,20 @@ public class DAO extends SQLiteOpenHelper {
         // Traversing through all rows and adding to list
         if (cursor.moveToFirst()) {
             do {
-                User user = new User();
-                user.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID))));
-                user.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
-                user.setFrgtquestion(cursor.getString(cursor.getColumnIndex(COLUMN_USER_FORGOT_QUESTION)));
-                user.setFrgtanswer(cursor.getString(cursor.getColumnIndex(COLUMN_USER_FORGOT_ANS)));
-                user.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
+                User_sem_details usersem = new User_sem_details();
+                Course course = new Course();
+                usersem.sem = cursor.getString(cursor.getColumnIndex(COLUMN_USER_COURSE_SEM));
+                course.setCourseName(cursor.getString(cursor.getColumnIndex(COLUMN_COURSE_NAME)));
+                course.setCourseLocation(cursor.getString(cursor.getColumnIndex(COLUMN_USER_COURSE_LOC)));
+                usersem.course_name = course;
                 // Adding user record to list
-                userList.add(user);
+                usersemList.add(usersem);
             } while (cursor.moveToNext());
         }
         cursor.close();
         db.close();
 
         // return user list
-        return userList;
+        return usersemList;
     }
 }
