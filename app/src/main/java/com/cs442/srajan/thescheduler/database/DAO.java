@@ -300,7 +300,7 @@ public class DAO extends SQLiteOpenHelper {
         values.put(COLUMN_COURSE_NAME, course_name);
         values.put(COLUMN_USER_COURSE_LOC, course_loc);
         // Inserting Row
-        db.insert(TABLE_COURSE, null, values);
+        db.insert(TABLE_USER_COURSE, null, values);
         db.close();
     }
 

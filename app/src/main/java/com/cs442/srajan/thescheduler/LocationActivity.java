@@ -24,8 +24,6 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
     private LatLng wh = new LatLng(41.835148, -87.627624);
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +58,8 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
         mMap.addMarker(new MarkerOptions().position(ph));
         mMap.addMarker(new MarkerOptions().position(sh));
         mMap.addMarker(new MarkerOptions().position(sb));
+        mMap.addMarker(new MarkerOptions().position(wh));
+
 
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(am, 17.0f));
     }

@@ -10,24 +10,27 @@
 
     <TextView
         android:id="@+id/enterLocationText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Please Enter a Location:" />
+        android:gravity="center_horizontal|fill"
+        android:text="Please Enter a Location:"
+        android:textAlignment="textStart"
+        android:textSize="24sp" />
 
 
     <Spinner
         android:id="@+id/spinnerSemester"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="5"
+        android:layout_weight="3"
         android:entries="@array/semester_list" />
 
     <Spinner
         android:id="@+id/spinnerLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="5"
+        android:layout_weight="3"
         android:entries="@array/locations_list" />
 
     <Button

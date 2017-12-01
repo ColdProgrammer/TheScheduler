@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.cs442.srajan.thescheduler.database.DAO;
+
 public class LocationChooserActivity extends AppCompatActivity {
 
     protected static String name;
@@ -25,6 +27,8 @@ public class LocationChooserActivity extends AppCompatActivity {
         String locations;
         String courses;
         String semesters;
+        String userId;
+        String userName;
 
         //The preference file name is stored in strings.xml
         String prefFile = getString(R.string.preference_file);
@@ -41,18 +45,28 @@ public class LocationChooserActivity extends AppCompatActivity {
         editor.putString("STUDENT_COURSES", courses+courseNum+","); //3
         editor.putString("COURSE_LOCATIONS", locations+location+",");
         editor.putString("COURSE_SEMESTERS", semesters+semester+",");
+
+
+
+        SharedPreferences sharedPreferences = this.getSharedPreferences(StaticVariables.SHAREDPREFERENCE_USER_NAME, Context.MODE_PRIVATE);
+
+        userId = sharedPreferences.getString(StaticVariables.USER_ID_USER_ID,"");
+        userName = sharedPreferences.getString(StaticVariables.USER_ID_USER_NAME,"");
+
+        new DAO(this).addUserCourses(userId, userName, semester, courseNum, location);
+
         editor.commit(); //4
     }
 
     //When the input class button is clicked, add class to database
-    public void addCourseToStudent(View view){
+    public void addCourseToStudent(View view) {
         Spinner mySpinner = (Spinner) findViewById(R.id.spinnerLocation);
         Spinner semesterSpinner = (Spinner) findViewById(R.id.spinnerSemester);
 
         String location = mySpinner.getSelectedItem().toString();
         String semester = semesterSpinner.getSelectedItem().toString();
 
-        Toast.makeText(this,name+" "+location,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, name + " " + location, Toast.LENGTH_SHORT).show();
 
         //Save to SharedPreferences
         save(this, name, location, semester);
