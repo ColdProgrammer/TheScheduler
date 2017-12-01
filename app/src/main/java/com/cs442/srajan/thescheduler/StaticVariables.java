@@ -33,6 +33,12 @@ public class StaticVariables {
     public static final String COLUMN_COURSE_DESCRIPTION = "course_desc";
     public static final String COLUMN_COURSE_PREREQUISITES = "course_prereq";
     public static final String COLUMN_COURSE_CREDITS = "course_credits";
+    //Course table name
+    public static final String TABLE_USER_COURSE = "user_course";
+    //Course Table Column names
+    public static final String COLUMN_USER_COURSE_SEM = "course_sem";
+    public static final String COLUMN_USER_COURSE_LOC = "course_loc";
+
     //SharedPreferenceVariables
     public static final String SHAREDPREFERENCE_USER_NAME = "user_details";
     //In user_details shared preference

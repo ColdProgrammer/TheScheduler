@@ -44,18 +44,29 @@ public class DAO extends SQLiteOpenHelper {
     public static final String COLUMN_COURSE_DESCRIPTION = StaticVariables.COLUMN_COURSE_DESCRIPTION;
     public static final String COLUMN_COURSE_PREREQUISITES = StaticVariables.COLUMN_COURSE_PREREQUISITES;
     public static final String COLUMN_COURSE_CREDITS = StaticVariables.COLUMN_COURSE_CREDITS;
+    //Course table name
+    public static final String TABLE_USER_COURSE = StaticVariables.TABLE_USER_COURSE;
+    //columns
+    public static final String COLUMN_USER_COURSE_SEM = "course_sem";
+    public static final String COLUMN_USER_COURSE_LOC = "course_loc";
 
     // create table sql query - user
     private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
             + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_NAME + " TEXT,"
             + COLUMN_USER_FORGOT_QUESTION + " TEXT," + COLUMN_USER_FORGOT_ANS + " TEXT," + COLUMN_USER_PASSWORD + " TEXT" + ")";
 
-    // create table sql query - course
+    /*// create table sql query - course
     private String CREATE_COURSE_TABLE = "CREATE TABLE " + TABLE_COURSE + "("
             + COLUMN_COURSE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_COURSE_NUMBER + " TEXT,"
             + COLUMN_COURSE_NAME + " TEXT," + COLUMN_COURSE_SPRING_YN + " TEXT," +
             COLUMN_COURSE_DESCRIPTION + " TEXT," + COLUMN_COURSE_PREREQUISITES + " TEXT," +
-            COLUMN_COURSE_CREDITS + " TEXT" + ")";
+            COLUMN_COURSE_CREDITS + " TEXT" + ")";*/
+
+    // create table sql query - course
+    private String CREATE_COURSE_TABLE = "CREATE TABLE " + TABLE_USER_COURSE + "("
+            + COLUMN_USER_ID + " INTEGER ," + COLUMN_USER_NAME + " TEXT,"
+            + COLUMN_COURSE_NAME + " TEXT," + COLUMN_USER_COURSE_SEM + " TEXT," +
+            COLUMN_USER_COURSE_LOC + " TEXT )";
 
     // drop table sql query
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
@@ -261,6 +272,33 @@ public class DAO extends SQLiteOpenHelper {
         values.put(COLUMN_COURSE_CREDITS, course.getCreditValue());
         // Inserting Row
         //db.insert(TABLE_COURSE, null, values);
+        db.close();
+    }
+
+    /**
+     *
+     * Function to add the courses selected by the user to the course
+     *
+     * @param userid
+     * @param username
+     * @param sem
+     * @param course_name
+     * @param course_loc
+     * @result void
+     *
+     *
+     * */
+    public void addUserCourses(String userid, String username, String sem, String course_name, String course_loc){
+        Log.d(TAG +" name of the course", course_name);
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_USER_ID, userid);
+        values.put(COLUMN_USER_NAME, username);
+        values.put(COLUMN_USER_COURSE_SEM, sem);
+        values.put(COLUMN_COURSE_NAME, course_name);
+        values.put(COLUMN_USER_COURSE_LOC, course_loc);
+        // Inserting Row
+        db.insert(TABLE_COURSE, null, values);
         db.close();
     }
 }
