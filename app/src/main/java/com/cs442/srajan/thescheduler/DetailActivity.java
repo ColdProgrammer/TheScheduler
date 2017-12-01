@@ -24,7 +24,7 @@ public class DetailActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_page);
         String num = name;
-        Toast.makeText(this, "sajfd"+num, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "sajfd"+num, Toast.LENGTH_SHORT).show();
         String courseDes=checkDes(num);
         TextView tv= findViewById(R.id.detailClassHead);
         tv.setText(Html.fromHtml("<b> CS "+name+"</b>"));
