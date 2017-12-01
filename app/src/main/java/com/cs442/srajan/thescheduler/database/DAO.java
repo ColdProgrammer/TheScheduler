@@ -232,7 +232,7 @@ public class DAO extends SQLiteOpenHelper {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             cursor.moveToFirst();
             String userID = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID));
-            String userName = cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME));
+            String userName = userId;
             editor.putString(StaticVariables.USER_ID_USER_ID, userID);
             editor.putString(StaticVariables.USER_ID_USER_NAME, userName);
             editor.commit();

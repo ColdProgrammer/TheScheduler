@@ -13,7 +13,8 @@
     <string name="view_calendar">View calendar</string>
     <string name="view_select_courses">View Selected Courses</string>
     <string name="error_valid_email_password">Wrong Email or Password</string>
-    <string name="error_no_username_password">Enter both UserName and Password</string>
+    <string name="error_no_username">Enter UserName</string>
+    <string name="error_no_password">Enter Password</string>
     <string name="error_no_details">Enter all the details</string>
     <string name="title_activity_future_classes">Future Classes</string>
     <string name="ctocomplete">Courses To Be Completed</string>
@@ -27,6 +28,17 @@
         <item>SH</item>
         <item>SB</item>
         <item>WH</item>
+    </string-array>
+
+    <string-array name="semester_list">
+        <item>Semester 1</item>
+        <item>Semester 2</item>
+        <item>Semester 3</item>
+        <item>Semester 4</item>
+        <item>Semester 5</item>
+        <item>Semester 6</item>
+        <item>Semester 7</item>
+        <item>Semester 8</item>
     </string-array>
 
     <string name="preference_file">TheSchedulerPref</string>

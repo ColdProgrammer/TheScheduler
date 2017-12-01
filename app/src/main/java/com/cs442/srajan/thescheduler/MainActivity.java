@@ -1,8 +1,11 @@
 package com.cs442.srajan.thescheduler;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
         //To get the back button on Title Bar
         getSupportActionBar().setHomeButtonEnabled(true);
+        SharedPreferences sharedPreferences = this.getSharedPreferences(StaticVariables.SHAREDPREFERENCE_USER_NAME, Context.MODE_PRIVATE);
+
+        Log.d("sharedPref","value is " + sharedPreferences.getString(StaticVariables.USER_ID_USER_ID,""));
     }
 
     public void startClassListActivity(View view) {
