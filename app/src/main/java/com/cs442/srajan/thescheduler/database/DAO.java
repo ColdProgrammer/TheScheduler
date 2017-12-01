@@ -338,7 +338,7 @@ public class DAO extends SQLiteOpenHelper {
          * SQL query equivalent to this query function is
          * SELECT user_id,user_name,user_email,user_password FROM user ORDER BY user_name;
          */
-        Cursor cursor = db.query(TABLE_USER, //Table to query
+        Cursor cursor = db.query(TABLE_USER_COURSE, //Table to query
                 columns,    //columns to return
                 selection,        //columns for the WHERE clause
                 selectionArgs,        //The values for the WHERE clause
