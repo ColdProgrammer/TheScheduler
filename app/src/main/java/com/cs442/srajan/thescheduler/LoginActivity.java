@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -46,23 +47,33 @@ public class LoginActivity extends AppCompatActivity {
     public void signInFunct(View view) {
         //On click of the sign-in page
 
+/*
         startActivity(new Intent(view.getContext(), MainActivity.class));
+*/
 
-        // Srajan check this out plz
 
-//        if(!(StaticVariables.checkEditTextIsEmpty(editTextPassword) && StaticVariables.checkEditTextIsEmpty(editTextPassword))) {
-//            if (databaseHelper.checkUser(this,editTextUserName.getText().toString(), editTextPassword.getText().toString())) {
-//                //Correct Password
-//                startActivity(new Intent(view.getContext(), MainActivity.class));
-//            } else {
-//                resetVal();
-//                //Snackbar.make(layoutLogin, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
-//                StaticVariables.themedSnackBar(layoutLogin, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG, Color.parseColor("#FFFFFF")).show();
-//            }
-//        } else {
-//            //Snackbar.make(layoutLogin, getString(R.string.error_no_username_password), Snackbar.LENGTH_LONG).show();
-//            StaticVariables.themedSnackBar(layoutLogin, getString(R.string.error_no_username_password), Snackbar.LENGTH_LONG, Color.parseColor("#FFFFFF")).show();
-//        }
+        if(!(StaticVariables.checkEditTextIsEmpty(editTextUserName))){
+            Log.d("inside if ", "when username is not null");
+            if(!(StaticVariables.checkEditTextIsEmpty(editTextPassword))) {
+                Log.d("inside if ", "when password is not null");
+                if (databaseHelper.checkUser(this,editTextUserName.getText().toString(), editTextPassword.getText().toString())) {
+                    //Correct Password
+                    startActivity(new Intent(view.getContext(), MainActivity.class));
+                } else {
+                    resetVal();
+                    //Snackbar.make(layoutLogin, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
+                    StaticVariables.themedSnackBar(layoutLogin, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG, Color.parseColor("#FFFFFF")).show();
+                }
+            } else {
+                Log.d("inside if ", "when password is null");
+                //Snackbar.make(layoutLogin, getString(R.string.error_no_username_password), Snackbar.LENGTH_LONG).show();
+                StaticVariables.themedSnackBar(layoutLogin, getString(R.string.error_no_password), Snackbar.LENGTH_LONG, Color.parseColor("#FFFFFF")).show();
+            }
+        } else {
+            Log.d("inside if ", "when username is null");
+            //Snackbar.make(layoutLogin, getString(R.string.error_no_username_password), Snackbar.LENGTH_LONG).show();
+            StaticVariables.themedSnackBar(layoutLogin, getString(R.string.error_no_username), Snackbar.LENGTH_LONG, Color.parseColor("#FFFFFF")).show();
+        }
     }
 
     /**

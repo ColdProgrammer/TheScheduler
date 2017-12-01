@@ -47,7 +47,7 @@ public class StaticVariables {
      *
      **/
     public static boolean checkEditTextIsEmpty(EditText editText){
-        return editText.getText().toString() == null;
+        return editText.getText().toString().equalsIgnoreCase("");
 
     }
 
