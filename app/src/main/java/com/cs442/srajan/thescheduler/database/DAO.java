@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.cs442.srajan.thescheduler.Adapter.User_sem_details;
 import com.cs442.srajan.thescheduler.StaticVariables;
@@ -24,6 +25,7 @@ public class DAO extends SQLiteOpenHelper {
 
     // Database Version
     private static final String TAG = "DAO";
+    private Context context;
     private static final int DATABASE_VERSION = StaticVariables.DATABASE_VERSION;
     // Database Name
     private static final String DATABASE_NAME = StaticVariables.DATABASE_NAME;
@@ -75,6 +77,7 @@ public class DAO extends SQLiteOpenHelper {
 
     public DAO(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
     @Override
@@ -365,5 +368,29 @@ public class DAO extends SQLiteOpenHelper {
 
         // return user list
         return usersemList;
+    }
+
+    /**
+     * Function to delete a row of courses
+     *
+     * @param courseSem
+     * @param courseName
+     * @param location
+     * @param userid
+     * @return void
+     *
+     * */
+    public void delUsrCourse(String courseSem, String courseName, String location, String userid){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String selection = COLUMN_USER_COURSE_SEM + " = ?" + " AND " + COLUMN_COURSE_NAME + " = ?"+ " AND " + COLUMN_USER_COURSE_LOC + " = ?"+ " AND " + COLUMN_USER_ID + " = ?";
+
+        // selection arguments
+        String[] selectionArgs = {courseSem, courseName,location,userid};
+        // delete user record by id
+        db.delete(TABLE_USER_COURSE,
+                selection,
+                selectionArgs);
+        db.close();
+        Toast.makeText(context, "Record Deleted", Toast.LENGTH_SHORT).show();
     }
 }

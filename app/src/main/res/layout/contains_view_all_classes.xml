@@ -32,6 +32,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Location : " />
+            <Button
+                android:id="@+id/del_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="delete"
+                android:layout_gravity="center"/>
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
