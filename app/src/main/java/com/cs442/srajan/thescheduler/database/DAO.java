@@ -313,7 +313,7 @@ public class DAO extends SQLiteOpenHelper {
      * @result List
      *
      * */
-    public List<User_sem_details> getAllCourses(String userid, String username) {
+    public ArrayList<User_sem_details> getAllCourses(String userid, String username) {
         // array of columns to fetch
         String[] columns = {
                 COLUMN_USER_COURSE_SEM,
@@ -328,7 +328,7 @@ public class DAO extends SQLiteOpenHelper {
         // selection arguments
         String[] selectionArgs = {userid, username};
 
-        List<User_sem_details> usersemList = new ArrayList();
+        ArrayList<User_sem_details> usersemList = new ArrayList();
 
         SQLiteDatabase db = this.getReadableDatabase();
 
