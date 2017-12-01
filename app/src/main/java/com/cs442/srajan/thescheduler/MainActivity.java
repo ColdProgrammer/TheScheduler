@@ -25,10 +25,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, ClassListActivity.class));
     }
 
-    public void addEventToCalendar(){
-        //TODO
-    }
-
     public void viewSelectedCourses(View view) {
         //Opens the current courses selected
         startActivity(new Intent(this, ViewAllClasses.class));
