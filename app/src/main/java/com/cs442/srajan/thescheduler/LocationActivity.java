@@ -14,6 +14,18 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
 
     private GoogleMap mMap;
 
+    private LatLng am = new LatLng(41.836232, -87.627283);
+    private LatLng cr = new LatLng(41.833141, -87.627169);
+    private LatLng re = new LatLng(41.837213, -87.627139);
+    private LatLng ls = new LatLng(41.838032, -87.627359);
+    private LatLng ph = new LatLng(41.835425, -87.627125);
+    private LatLng sh = new LatLng(41.834261, -87.627635);
+    private LatLng sb = new LatLng(41.838668, -87.627373);
+    private LatLng wh = new LatLng(41.835148, -87.627624);
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +46,21 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.addMarker(new MarkerOptions().position(am));
+        mMap.addMarker(new MarkerOptions().position(cr));
+        mMap.addMarker(new MarkerOptions().position(re));
+        mMap.addMarker(new MarkerOptions().position(ls));
+        mMap.addMarker(new MarkerOptions().position(ph));
+        mMap.addMarker(new MarkerOptions().position(sh));
+        mMap.addMarker(new MarkerOptions().position(sb));
+
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(am, 17.0f));
     }
 }
